@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+class ExceptionDemo1 {
+    public static void main(String A[]) {
+        
+        Scanner Sobj = new Scanner(System.in);
+
+        int No1 = 0, No2 = 0, Ans = 0;
+
+        try {
+            System.out.println("Enter First Number");
+            No1 = Sobj.nextInt();
+
+            System.out.println("Enter Second Number");
+            No2 = Sobj.nextInt();
+
+            Ans = No1 / No2;                // Exception Prone Code -> N/0
+        } 
+        catch(ArithmeticException Aobj)
+        {
+            System.out.println("Exception Occured : " + Aobj);
+        }
+        catch(Exception Eobj)
+        {
+            System.out.println("Inside Generic Catch");
+        }
+        finally
+        {
+            System.out.println("Inside Finally Block");
+        }
+
+        System.out.println("Division is : " + Ans);
+    }
+}
